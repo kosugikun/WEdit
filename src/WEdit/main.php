@@ -240,6 +240,7 @@ class main extends PluginBase implements Listener{
 		}else{
 			$player->sendMessage('§cスポンジで範囲を指定してください');
 		}
+		return true;
 	}
 
 	public function random($player, $before, int $rate, array $after){
