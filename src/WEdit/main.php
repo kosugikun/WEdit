@@ -17,6 +17,7 @@ use pocketmine\Player;
 class main extends PluginBase implements Listener{
 
 	public function onEnable(){
+		$this->getlogger()->info("WEditを起動しました。");
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 	}
 
