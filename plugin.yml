@@ -1,0 +1,45 @@
+name: WEdit
+main: WEdit\main
+version: 1.0
+api: [3.0.0-ALPHA7, 3.0.0-ALPHA8]
+commands:
+  air:
+    description: 指定ブロックを消去します
+    usage: /air <id>
+    permission: op
+  bricks:
+    description: 石煉瓦を適当にコケとヒビに変更します
+    usage: /bricks
+    permission: op
+  copy:
+    description: ブロックをコピーします
+    usage: /copy
+    permission: op
+  cut:
+    description: ブロックを消去します
+    usage: /cut
+    permission: op
+  e:
+    description: 範囲情報を消去します
+    usage: /e
+    permission: op
+  paste:
+    description: ブロックをペーストします
+    usage: /paste
+    permission: op
+  random:
+    description: 指定ブロックを適当に指定ブロックに変更します
+    usage: /random <before> <確率> <<after> ...> 
+    permission: op
+  replace:
+    description: 指定ブロックを指定ブロックに変更します
+    usage: /replace <before> <after>
+    permission: op
+  set:
+    description: 指定ブロックを設置します
+    usage: /set <id>
+    permission: op
+  undo:
+    description: 前回の状態に復元します
+    usage: /undo
+    permission: op
