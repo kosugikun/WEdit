@@ -16,6 +16,20 @@ use pocketmine\Player;
 use pocketmine\utils\Utils;
 
 class main extends PluginBase implements Listener{
+	
+	public function onLoad() {
+        $response = Utils::getURL("http://www.example.com/version.txt?" . time() . "mt_rand");    //プラグインのバージョンが記載されているファイルが置かれているURL。?とtime()とmt_rand()は後で解説
+
+        if($response !== false) {    //接続できなかった場合はfalseを返すのでここで評価
+            $response = str_replace("\n", "", $response);    //文字列の最後は改行されているのでそれを取り除く
+           
+            if($this->getDescription()->getVersion() !== $response) {    //plugin.ymlに記載されているバージョンと$responseを比較
+               
+                $message = "KurasakiEditの新しいバージョンがあります！　⇒" . $this->getDescription()->getWebsite();    //お知らせとplugin.ymlに記載されているwabsite欄のURLを表示
+                $this->getServer()->getLogger()->notice($message);
+            }
+        }
+    }
 
 	public function onEnable(){
 		$this->getlogger()->info("KurasakiEditを起動しました。");
