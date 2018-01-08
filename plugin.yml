@@ -1,6 +1,7 @@
 name: KurasakiEdit
 main: KurasakiEdit\main
 version: 1.1
+website: https://github.com/kosugikun/WEdit
 api: [3.0.0-ALPHA7, 3.0.0-ALPHA8]
 commands:
   air:
