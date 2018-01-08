@@ -18,7 +18,7 @@ use pocketmine\utils\Utils;
 class main extends PluginBase implements Listener{
 	
 	public function onLoad() {
-        $response = Utils::getURL("http://www.example.com/version.txt?" . time() . "mt_rand");    //プラグインのバージョンが記載されているファイルが置かれているURL。?とtime()とmt_rand()は後で解説
+        $response = Utils::getURL("https://github.com/kosugikun/WEdit/raw/master/version.txt?" . time() . "mt_rand");    //プラグインのバージョンが記載されているファイルが置かれているURL。?とtime()とmt_rand()は後で解説
 
         if($response !== false) {    //接続できなかった場合はfalseを返すのでここで評価
             $response = str_replace("\n", "", $response);    //文字列の最後は改行されているのでそれを取り除く
