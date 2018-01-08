@@ -1,6 +1,6 @@
 <?php
 
-namespace WEdit;
+namespace KurasakiEdit;
 
 use pocketmine\block\Block;
 use pocketmine\command\Command;
