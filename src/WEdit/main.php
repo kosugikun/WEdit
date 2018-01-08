@@ -13,11 +13,12 @@ use pocketmine\item\Item;
 use pocketmine\math\Vector3;
 use pocketmine\plugin\PluginBase;
 use pocketmine\Player;
+use pocketmine\utils\Utils;
 
 class main extends PluginBase implements Listener{
 
 	public function onEnable(){
-		$this->getlogger()->info("WEditを起動しました。");
+		$this->getlogger()->info("KurasakiEditを起動しました。");
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 	}
 
@@ -66,7 +67,7 @@ class main extends PluginBase implements Listener{
 
 	public function isSetting($event, $own, $two){
 		$id = $event->getItem()->getId();
-		if($id === 19){
+		if($id === 137){
 			$player = $event->getPlayer();
 			$name = $player->getName();
 			if(!isset($this->setting[$name][$own])){
@@ -130,7 +131,7 @@ class main extends PluginBase implements Listener{
 			$this->setting[$name][3] = [$copy, $change[6], $change[7], $change[8]];
 			$server->broadcastMessage($name.'のコピーが終了しました (X: '.$change[6].' Y: '.$change[7].' Z: '.$change[8].')');
 		}else{
-			$player->sendMessage('§cスポンジで範囲を指定してください');
+			$player->sendMessage('§cコマンドブロックで範囲を指定してください');
 		}
 	}
 
@@ -204,7 +205,7 @@ class main extends PluginBase implements Listener{
 				$player->sendMessage('§c範囲が正確でないた、ペーストが出来ません');
 			}
 		}else{
-			$player->sendMessage('§cスポンジで範囲を指定してください');
+			$player->sendMessage('§cコマンドブロックで範囲を指定してください');
 		}
 	}
 
@@ -239,7 +240,7 @@ class main extends PluginBase implements Listener{
 			$count = count($undo);
 			$server->broadcastMessage($name.'の変更が終了しました (変更: '.$count.')');
 		}else{
-			$player->sendMessage('§cスポンジで範囲を指定してください');
+			$player->sendMessage('§cコマンドブロックで範囲を指定してください');
 		}
 		return true;
 	}
@@ -286,7 +287,7 @@ class main extends PluginBase implements Listener{
 				$server->broadcastMessage($name.'の変更が終了しました (変更: '.$ceil.')');
 			}
 		}else{
-			$player->sendMessage('§cスポンジで範囲を指定してください');
+			$player->sendMessage('§cコマンドブロックで範囲を指定してください');
 		}
 	}
 
@@ -320,7 +321,7 @@ class main extends PluginBase implements Listener{
 			$count = count($undo);
 			$server->broadcastMessage($name.'の変更が終了しました (変更: '.$count.')');
 		}else{
-			$player->sendMessage('§cスポンジで範囲を指定してください');
+			$player->sendMessage('§cコマンドブロックで範囲を指定してください');
 		}
 	}
 
